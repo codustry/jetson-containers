@@ -144,6 +144,34 @@ RUN mkdir -p ${ROS_ROOT}/src && \
 		image_transport \
 		compressed_image_transport \
 		compressed_depth_image_transport \
+		rclcpp \
+		rclcpp-components \
+		rcutils \
+		ament-cmake \
+		launch-ros \
+		xacro \
+		ament-cmake-pytest \
+		ament-lint-auto \
+		ament-lint-common \
+		launch \
+		launch-testing \
+		launch-testing-ros \
+		rmw-implementation-cmake \
+		builtin-interfaces \
+		std-msgs \
+		geometry-msgs \
+		rosidl-default-generators \
+		rosidl-default-runtime \
+		stereo-msgs \
+		sensor-msgs \
+		nav-msgs \
+		tf2 \
+		tf2-ros \
+		tf2-geometry-msgs \
+		image-transport \
+		std-srvs \
+		diagnostic-msgs \
+		diagnostic-updater \
 		> ros2.${ROS_DISTRO}.${ROS_PKG}.rosinstall && \
     cat ros2.${ROS_DISTRO}.${ROS_PKG}.rosinstall && \
     vcs import src < ros2.${ROS_DISTRO}.${ROS_PKG}.rosinstall && \

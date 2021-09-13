@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  build:
+    cmds:
+      - docker build . -f Dockerfile.ros.foxy -t codustry/ros:foxy-ros-base-l4t-r32.5.0
+  push:
+    cmds:
+      - docker push codustry/ros:foxy-ros-base-l4t-r32.5.0
