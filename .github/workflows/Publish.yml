@@ -43,5 +43,7 @@ jobs:
           push: true
           tags: codustry/ros:foxy-ros-base-l4t-r32.5.0
           file: Dockerfile.ros.foxy
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           # tags: ${{ steps.meta.outputs.tags }}
           # labels: ${{ steps.meta.outputs.labels }}
