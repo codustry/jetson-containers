@@ -14,6 +14,10 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
+
+    matrix:
+      l4t: [r32.5.0, r32.6.1]
+
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -36,14 +40,15 @@ jobs:
       #   with:
       #     images: codustry/ros
       
-      - name: Build and push Docker image
+      - name: Build and push Docker image for 
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: codustry/ros:foxy-ros-base-l4t-r32.5.0
+          tags: codustry/ros:foxy-ros-base-l4t-${{ matrix.l4t }}
           file: Dockerfile.ros.foxy
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          # tags: ${{ steps.meta.outputs.tags }}
-          # labels: ${{ steps.meta.outputs.labels }}
+          build-args: 
+            - BASE_IMAGE=nvcr.io/nvidia/l4t-base:${{ matrix.l4t }}
+      
