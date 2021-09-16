@@ -50,6 +50,5 @@ jobs:
           file: Dockerfile.ros.foxy
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          build-args: 
-            - BASE_IMAGE=nvcr.io/nvidia/l4t-base:${{ matrix.l4t }}
+          build-args: BASE_IMAGE=nvcr.io/nvidia/l4t-base:${{ matrix.l4t }}
       
