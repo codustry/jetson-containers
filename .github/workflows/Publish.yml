@@ -14,9 +14,10 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-
-    matrix:
-      l4t: [r32.5.0, r32.6.1]
+    strategy:
+      fail-fast: false
+      matrix:
+        l4t: [r32.5.0, r32.6.1]
 
     steps:
       - name: Set up QEMU
