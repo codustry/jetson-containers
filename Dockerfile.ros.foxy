@@ -234,7 +234,7 @@ RUN sed -i \
     /ros_entrypoint.sh && \
     cat /ros_entrypoint.sh
 
-RUN echo 'source ${ROS_ROOT}/install/setup.bash' >> /root/.bashrc
+RUN echo "source ${ROS_ROOT}/install/setup.bash" >> /root/.bashrc
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
